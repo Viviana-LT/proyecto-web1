@@ -4,15 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>Menú</header>
+    <header>
+        <nav>
+            <h2>Navegación</h2>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="reseñas.html">Reseñas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Ingresar</a></li>
+            </ul>
+        </nav>
+        <h1>Menú</h1>
+    </header>
     <main>
         <section id="productos">
-            <article class="">
+            <article class="producto">
                 <header><h3>"Cookies & Creme Frappuccino"</h3></header>
                 <figure>
-                    <img src="" alt="">
+                    <img src="D:\Clases\UNSA\Clases\Semestre II\IDWEB\Laboratorio\Lab_IDWEB\proyecto-web1\recurs\frappuccino.png" alt="">
                 </figure>
                 <h4>Precio</h4>
                 <p>S/16</p>
@@ -23,7 +36,7 @@
                 <br><br>
             </article>
 
-            <article class="">
+            <article class="producto">
                 <header><h3>"Latte helado"</h3></header>
                 <figure>
                     <img src="" alt="">
@@ -31,13 +44,13 @@
                 <h4>Precio</h4>
                 <p>S/12</p>
                 <label for="canti2">Precio:</label>
-                <input type="number" id="canti2">
+                <input type="number" id="canti2" min="1">
                 <h4>Descripción</h4>
                 <p>Café Espresso de cuerpo completo mezclado con leche fría y cubos de hielo. Sin endulzantes. Imágenes referenciales.</p>
                 <br><br>
             </article>
 
-            <article class="">
+            <article class="producto">
                 <header><h3>"Chocolate caliente"</h3></header>
                 <figure>
                     <img src="" alt="">
@@ -45,13 +58,13 @@
                 <h4>Precio</h4>
                 <p>S/13</p>
                 <label for="canti3">Precio:</label>
-                <input type="number" id="canti3">
+                <input type="number" id="canti3" min="1">
                 <h4>Descripción</h4>
                 <p>Clásico chocolate caliente con leche vaporizada y salsa de chocolate. Sin endulzantes adicionales. Imágenes referenciales.</p>
                 <br><br>
             </article>
 
-            <article class="">
+            <article class="producto">
                 <header><h3>"Muffin de Naranja"</h3></header>
                 <figure>
                     <img src="" alt="">
@@ -59,7 +72,7 @@
                 <h4>Precio</h4>
                 <p>S/10</p>
                 <label for="canti4">Precio:</label>
-                <input type="number" id="canti4">
+                <input type="number" id="canti4" min="1">
                 <h4>Descripción</h4>
                 <p>Muffin realizado con harina de trigo, aceite vegetal, huevos, jugo de naranja, ralladura de naranja, cobertura bitter, margarina, azucar, escencia de vainilla y naranja. Porción individual. Imágenes referenciales.</p>
                 <br><br>
