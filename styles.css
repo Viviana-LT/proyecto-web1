@@ -12,7 +12,7 @@ body{
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 h2{
-    color: rgb(183, 143, 125);
+    color: rgb(47, 73, 43);
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -57,7 +57,7 @@ nav{
     padding: 2px;;
 }
 nav h2{
-    color: #494440;
+    color: #4c432d;
    
 }
 nav ul {
@@ -65,19 +65,33 @@ nav ul {
     display: flex;
     gap: 20px; 
     align-items: center;
-  }
+ }
 
-  nav a {
+nav a {
     text-decoration: none;
     color: #413737;
     font-weight: 500;
     padding: 10px 15px;
-  }
-  nav a:hover {
+}
+nav a:hover {
     background-color: #f0f0f0;
     color: #3f5e43;
-  }
+}
 .producto{
     display: flex;
     gap: 30px;
+}
+.contacto{
+    margin-top: 170px;
+    margin-left: 20px;
+    margin-left: 20px;
+}
+a:link{
+    color: #3f465e;
+}
+a:visited{
+    color: #413737;
+}
+a:hover{
+    color: #0d4051;
 }
