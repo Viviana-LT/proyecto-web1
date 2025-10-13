@@ -44,14 +44,38 @@ p{
 }
 
 .bienvenido{
-    margin-top: 120px;
-    
-    display: flex;
-    gap: 10px;
-}
-.margen{
+    margin-top: 140px;
     margin-left: 20px;
     margin-right: 20px;
+    display: flex;
+    gap: 15px;
+}
+.bienvenido p{
+    font-family: "Vainilla";
+    font-size:30px;
+    color: #4a4436;
+}
+.historia{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    gap: 15px;
+}
+.index{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.contenedor {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 5px;
+}
+.seccion {
+    background-color: rgb(142, 158, 128);;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 /*navegacion en horizontal*/
@@ -80,44 +104,46 @@ nav a:hover {
     background-color: #f0f0f0;
     color: #3f5e43;
 }
+footer p{
+    text-align: center;
+}
 .producto{
     display: flex;
     flex-shrink: 20px;
     gap: 30px;
 }
-
-    .producto header{
-        text-decoration: none;
-        min-width: 100px; 
-        max-width: 100px;
-        background-color: rgb(150, 164, 121); 
-        padding: 10px;
-        text-align: center;
-        border-radius: 10px;
-        align-content: center;
-        font-style: italic;
-        height: 100px;
-        font-weight: 100;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 13px;
-    }
-    .producto p{
-        text-align: justify;
-    }
+.producto header{
+    text-decoration: none;
+    min-width: 100px; 
+    max-width: 100px;
+    background-color: rgb(150, 164, 121); 
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    align-content: center;
+    font-style: italic;
+    height: 100px;
+    font-weight: 100;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 13px;
+}
+.producto p{
+    text-align: justify;
+}
 
 /*Sección de contactos*/
 .cyu{
     display: flex ;
     gap: 30px;
-    }
-    .cyu article{
-        min-width: 500px;
-    }
-    .cyu a{
-        text-decoration: none;
-        color: #494440;
-        letter-spacing: 2px;
-    }
+}
+.cyu article{
+    min-width: 500px;
+}
+.cyu a{
+    text-decoration: none;
+    color: #494440;
+    letter-spacing: 2px;
+}
 
 input{
   width: 60px;  
