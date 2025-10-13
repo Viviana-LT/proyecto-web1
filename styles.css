@@ -13,8 +13,6 @@ body{
 }
 h2{
     color: rgb(47, 73, 43);
-    margin-left: 20px;
-    margin-right: 20px;
 }
 p{
     font-weight: 30px;
@@ -50,6 +48,10 @@ p{
     gap: 10px;
 }
 .margen{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+main{
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -119,11 +121,6 @@ nav a:hover {
         letter-spacing: 2px;
     }
 
-input{
-  width: 60px;  
-  padding: 18px;
-  height: 20px;   
-}
 .contacto{
     margin-top: 170px;
     margin-left: 20px;
