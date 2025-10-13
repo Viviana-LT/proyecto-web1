@@ -2,36 +2,19 @@
     font-family: "Vainilla";
     src: url(recurs/vainilla.ttf);
 }
-
-::selection{
-    background-color: rgb(172, 110, 84);
-    color: white;
-}
 header{
     background-color: rgb(150, 164, 121);
     padding: 20px 20px;
     height: 140px;
 }
-main{
-    margin-left: 20px;
-    margin-right: 20px;
-}
 body{
-    background-color: beige;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ background-color: beige;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 h2{
-<<<<<<< HEAD
     color: rgb(47, 73, 43);
     margin-left: 20px;
     margin-right: 20px;
-=======
-    color: rgb(172, 110, 84);
-    font-family: 'Vainilla';
-    font-size: 45px;
-    font-weight: 100;
-    letter-spacing: 2px;
->>>>>>> cf8a5aba8c16d950913fc49e8e195e16c40c1b55
 }
 p{
     font-weight: 30px;
@@ -61,7 +44,10 @@ p{
 }
 
 .bienvenido{
-    float: left;
+    margin-top: 120px;
+    
+    display: flex;
+    gap: 10px;
 }
 .margen{
     margin-left: 20px;
@@ -74,13 +60,7 @@ nav{
     padding: 2px;;
 }
 nav h2{
-<<<<<<< HEAD
     color: #4c432d;
-=======
-    color: #494440;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 25px;
->>>>>>> cf8a5aba8c16d950913fc49e8e195e16c40c1b55
    
 }
 nav ul {
@@ -88,7 +68,6 @@ nav ul {
     display: flex;
     gap: 20px; 
     align-items: center;
-<<<<<<< HEAD
  }
 
 nav a {
@@ -101,33 +80,21 @@ nav a:hover {
     background-color: #f0f0f0;
     color: #3f5e43;
 }
-=======
-    }
-
-    nav a {
-        text-decoration: none;
-        color: #413737;
-        font-weight: 500;
-        padding: 10px 15px;
-    }
-    nav a:hover {
-        background-color: #f0f0f0;
-        color: #3f5e43;
-    }
-
-/*Sección de productos*/
->>>>>>> cf8a5aba8c16d950913fc49e8e195e16c40c1b55
 .producto{
     display: flex;
-    flex-shrink: 20px;
     gap: 30px;
 }
-<<<<<<< HEAD
+input{
+  width: 60px;  
+  padding: 18px;
+  height: 20px;   
+}
 .contacto{
     margin-top: 170px;
     margin-left: 20px;
     margin-left: 20px;
 }
+
 a:link{
     color: #3f465e;
 }
@@ -137,37 +104,3 @@ a:visited{
 a:hover{
     color: #0d4051;
 }
-=======
-    .producto header{
-        text-decoration: none;
-        min-width: 100px; 
-        max-width: 100px;
-        background-color: rgb(150, 164, 121); 
-        padding: 10px;
-        text-align: center;
-        border-radius: 10px;
-        align-content: center;
-        font-style: italic;
-        height: 100px;
-        font-weight: 100;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 13px;
-    }
-    .producto p{
-        text-align: justify;
-    }
-
-/*Sección de contactos*/
-.cyu{
-    display: flex ;
-    gap: 30px;
-    }
-    .cyu article{
-        min-width: 500px;
-    }
-    .cyu a{
-        text-decoration: none;
-        color: #494440;
-        letter-spacing: 2px;
-    }
->>>>>>> cf8a5aba8c16d950913fc49e8e195e16c40c1b55
