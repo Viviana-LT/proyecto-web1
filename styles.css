@@ -13,8 +13,6 @@ body{
 }
 h2{
     color: rgb(47, 73, 43);
-    margin-left: 20px;
-    margin-right: 20px;
 }
 p{
     font-weight: 30px;
@@ -76,6 +74,10 @@ p{
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+main{
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /*navegacion en horizontal*/
@@ -145,11 +147,6 @@ footer p{
     letter-spacing: 2px;
 }
 
-input{
-  width: 60px;  
-  padding: 18px;
-  height: 20px;   
-}
 .contacto{
     margin-top: 170px;
     margin-left: 20px;
