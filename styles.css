@@ -68,12 +68,26 @@ p{
    display: grid;
    grid-template-columns: 1fr 1fr;
    gap: 5px;
+   max-width: none;
 }
 .seccion {
-    background-color: rgb(142, 158, 128);;
+    background-color:rgb(173, 184, 151);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: auto;
+    color: #5c504b;
+
+}
+.seccion p{
+    font-family:"Vainilla";
+    font-size: 28px;
+}
+.img{
+    float: right;
+    border-radius: 8px;
+    margin-left:5px;
+    margin-right: 2px;
 }
 main{
     margin-left: 20px;
