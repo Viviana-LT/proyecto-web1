@@ -86,24 +86,38 @@ nav a:hover {
     gap: 30px;
 }
 
-.producto header{
-    text-decoration: none;
-    min-width: 100px; 
-    max-width: 100px;
-    background-color: rgb(150, 164, 121); 
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px;
-    align-content: center;
-    font-style: italic;
-    height: 100px;
-    font-weight: 100;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 13px;
-}
-.producto p{
-    text-align: justify;
-}
+    .producto header{
+        text-decoration: none;
+        min-width: 100px; 
+        max-width: 100px;
+        background-color: rgb(150, 164, 121); 
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px;
+        align-content: center;
+        font-style: italic;
+        height: 100px;
+        font-weight: 100;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 13px;
+    }
+    .producto p{
+        text-align: justify;
+    }
+
+/*Sección de contactos*/
+.cyu{
+    display: flex ;
+    gap: 30px;
+    }
+    .cyu article{
+        min-width: 500px;
+    }
+    .cyu a{
+        text-decoration: none;
+        color: #494440;
+        letter-spacing: 2px;
+    }
 
 input{
   width: 60px;  
