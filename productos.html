@@ -10,6 +10,7 @@
     <header>
         <br>
         <img class="logo" src="recurs/logo.png" width="180">
+        
         <!--Nombre de nuestra empresa-->
         <h1 class="title">Neko no Mori</h1>
         <p class="subtitle">Coffe and cats</p>
@@ -29,16 +30,45 @@
 
         <section id="productos" class="margen">
             <br><br><br><br><br><br><br>
-            <h2>Productos</h2>
+            <div class="header-prod">
+                <h2>Productos</h2>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-car">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                    </svg>
+
+                    <div class="contar-prod">
+                        <span id="contador-productos"></span>
+                    </div>
+
+                    <div class="contenedor-carrito-oculto">
+                        <div class="carro-productos">
+                            <div class="carro-producto"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-x">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+
+                        </div>
+
+                        <div class="carro.total">
+                            <h3>Total</h3>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
             <article class="producto">
                 <header><h3>Cookies & Creme Frappuccino</h3></header>
                 <figure>
-                    <img src="recurs/frappuccino.png" width="120">
+                    <img class="item" src="recurs/frappuccino.png" width="120">
                 </figure>
                 <div>
                     <p>Precio: S/16</p>
                     <label for="canti1">Cantidad:</label>
-                    <input type="number" id="canti1" min="1">
+                    <input type="number" id="canti1" min="1"><br><br>
+                    <button class="carrito"> Agregar al &#x1F6D2 </button>
                 </div>
                 <h4>Descripción</h4>
                 <p>Clásico frappuccino de leche batido con mocha blanco y gotas sabor a chocolate, jarabe de azúcar y decorado con crema batida y topping de galletas trozadas.</p>
@@ -49,12 +79,13 @@
             <article class="producto">
                 <header><h3>Latte <br>helado</h3></header>
                 <figure>
-                    <img src="recurs/latte.png" width="120">
+                    <img class="item" src="recurs/latte.png" width="120">
                 </figure>
                 <div>
                     <p>Precio: S/12</p>
                     <label for="canti1">Cantidad:</label>
-                    <input type="number" id="canti1" min="1">
+                    <input type="number" id="canti1" min="1"><br><br>
+                    <button class="carrito">Agregar al &#x1F6D2</button>
                 </div>
                 <h4>Descripción</h4>
                 <p>Café Espresso de cuerpo completo mezclado con leche fría y cubos de hielo. Sin endulzantes.</p>
@@ -65,12 +96,13 @@
             <article class="producto">
                 <header><h3>Chocolate caliente</h3></header>
                 <figure>
-                    <img src="recurs/chocolateC.png" width="120">
+                    <img class="item" src="recurs/chocolateC.png" width="120">
                 </figure>
                 <div>
                     <p>Precio: S/13</p>
                     <label for="canti1">Cantidad:</label>
-                    <input type="number" id="canti1" min="1">
+                    <input type="number" id="canti1" min="1"><br><br>
+                    <button class="carrito">Agregar al &#x1F6D2</button>
                 </div>
                 <h4>Descripción</h4>
                 <p>Clásico chocolate caliente con leche vaporizada y salsa de chocolate. Sin endulzantes adicionales.</p>
@@ -81,12 +113,13 @@
             <article class="producto">
                 <header><h3>Muffin de Naranja</h3></header>
                 <figure>
-                    <img src="recurs/muffin.png" width="120">
+                    <img class="item" src="recurs/muffin.png" width="120">
                 </figure>
                 <div>
                     <p>Precio: S/20</p>
                     <label for="canti1">Cantidad:</label>
-                    <input type="number" id="canti1" min="1">
+                    <input type="number" id="canti1" min="1"><br><br>
+                    <button class="carrito">Agregar al &#x1F6D2</button>
                 </div>
                 <h4>Descripción</h4>
                 <p>Muffin realizado con harina de trigo, aceite vegetal, huevos, jugo de naranja y ralladura de naranja.</p>

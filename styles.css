@@ -107,7 +107,7 @@ nav ul {
     gap: 20px;
     justify-content: center;
     align-items: center;
- }
+}
 
 nav a {
     text-decoration: none;
@@ -122,10 +122,13 @@ nav a:hover {
 footer p{
     text-align: center;
 }
+
+/*Sección de productos*/
 .producto{
     display: flex;
     flex-shrink: 20px;
     gap: 30px;
+    height: 140px;
 }
 .producto header{
     text-decoration: none;
@@ -138,12 +141,41 @@ footer p{
     align-content: center;
     font-style: italic;
     height: 100px;
-    font-weight: 100;
+    font-weight: 150;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 13px;
+    display: flex;
+    align-items: center;
 }
+
 .producto p{
     text-align: justify;
+}
+.icon-car{
+    width: 40px;
+    height: 40px;
+}
+.header-prod{
+    padding: 30px 0px 25px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.carrito{
+    background-color:rgb(150, 164, 121);
+    border-color: #d5dada;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;   
+    width: 130px;
+    align-self: center;
+}
+.carrito:hover{
+    background-color: #3f5e43;
+    color: #d5dada;
+}
+.item:hover{
+    transform: scale(1.2);
+    transition: all .3s;
 }
 
 /*Sección de contactos*/
