@@ -207,6 +207,10 @@ footer p{
     justify-content: space-between;
     align-items: center;
 }
+header h3{
+    display: flex;
+    align-items: center;
+}
 .item:hover{
     transform: scale(1.2);
     transition: all .3s;
@@ -321,7 +325,6 @@ footer p{
     color: #494440;
     letter-spacing: 2px;
 }
-
 .contacto{
     margin-top: 170px;
     margin-left: 20px;
