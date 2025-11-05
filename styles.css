@@ -348,3 +348,90 @@ a:hover{
     padding: 20px;
     line-height: 1.6;
 }
+/* Login */
+.login-centro { 
+    max-width: 420px; 
+    margin: 120px auto 48px; 
+    padding: 0 16px; 
+}
+.login-card { 
+    background: #f7f8f2; 
+    border: 1px solid #dfe6cf; 
+    border-radius: 10px; 
+    padding: 16px 18px; 
+}
+.login-card h2 { 
+    margin: 0 0 10px; 
+    font-weight: 600; 
+    color: #2f492b; 
+}
+.form-grupo { 
+    display: grid; 
+    gap: 6px; 
+    margin-bottom: 12px; 
+}
+.form-grupo input[type="text"], .form-grupo input[type="password"] {
+  padding: 10px 12px; 
+  border: 1px solid #c8d0bb; 
+  border-radius: 8px; 
+  background: #fff; 
+  color: #4a4436; 
+  outline: none;
+}
+.form-grupo input:focus { 
+    border-color: rgb(150,164,121); 
+    box-shadow: 0 0 0 2px rgba(150,164,121,0.18); 
+}
+.form-acciones { 
+    margin-top: 4px; 
+}
+.btn-sencillo { 
+    background: rgb(150,164,121); 
+    color: #413737; 
+    border: none; 
+    padding: 8px 14px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+}
+.msg-sencillo { 
+    margin-top: 8px; 
+    font-size: 14px; 
+    color: #4a4436; 
+}
+
+/* Reseñas */
+.reseñas-centro { 
+    margin: 120px 20px 48px; 
+}
+.reseñas-panel {
+  background: #f5e7ba;
+  border: 1px solid #dfe6cf;
+  border-radius: 10px;
+  padding: 16px;
+}
+.reseñas-panel h2 { 
+    margin: 0 0 10px; 
+    font-weight: 600; 
+    color: #2f492b; 
+}
+.reseñas-lista { 
+    display: grid; 
+    gap: 12px; 
+    margin-top: 12px; 
+}
+.reseña-item {
+  background: #ffffff;
+  border: 1px solid #e7ecd9;
+  border-radius: 10px;
+  padding: 12px;
+}
+.reseña-item h3 { 
+    margin: 0 0 6px; 
+    color: #3f4b3a; 
+    font-weight: 600; 
+}
+.reseña-item p { 
+    margin: 0; 
+    line-height: 1.5; 
+    color: #4a4436; 
+}
