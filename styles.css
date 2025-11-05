@@ -1,9 +1,10 @@
 @font-face{
     font-family: "Vainilla";
-    src: url(recurs/vainilla.ttf);
+    src: url(recurs/vainilla\ .ttf);
 }
 header{
     background-color: rgb(150, 164, 121);
+    box-shadow: 0px 5px 20px rgb(176, 174, 174)  ;
     padding: 20px 20px;
     height: 140px;
 }
@@ -24,7 +25,7 @@ p{
     color: #f5e7ba;
     font-size: 80px;
     letter-spacing: 2px;
-    margin-top: -5px;
+    margin-top: -2px;
     margin-left: 130px;
 }
 .subtitle{
@@ -32,7 +33,7 @@ p{
     font-family: "Vainilla";
     color: rgb(104, 90, 82);
     font-size: 50px;
-    margin-top: -45px;
+    margin-top: -55px;
     margin-left: 130px;
 }
 .logo{
@@ -74,7 +75,7 @@ p{
     background-color:rgb(173, 184, 151);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0px 5px 20px rgb(176, 174, 174);
     width: auto;
     color: #5c504b;
 
@@ -97,16 +98,14 @@ main{
 /*navegacion en horizontal*/
 nav{
     background-color: rgb(150, 164, 121);
+    box-shadow: 0px 5px 20px rgb(176, 174, 174)  ;
     padding: 2px;;
-}
-nav h2{
-    color: #4c432d;
-   
 }
 nav ul {
     list-style: none; 
     display: flex;
-    gap: 20px; 
+    gap: 20px;
+    justify-content: center;
     align-items: center;
  }
 
