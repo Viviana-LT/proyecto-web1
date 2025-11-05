@@ -147,19 +147,24 @@ footer p{
     display: flex;
     align-items: center;
 }
-
 .producto p{
     text-align: justify;
-}
-.icon-car{
-    width: 40px;
-    height: 40px;
 }
 .header-prod{
     padding: 30px 0px 25px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.item:hover{
+    transform: scale(1.2);
+    transition: all .3s;
+}
+
+/*Carrito*/
+.icon-car{
+    width: 40px;
+    height: 40px;
 }
 .carrito{
     background-color:rgb(150, 164, 121);
@@ -173,9 +178,77 @@ footer p{
     background-color: #3f5e43;
     color: #d5dada;
 }
-.item:hover{
-    transform: scale(1.2);
-    transition: all .3s;
+.contenedor-icono{
+    position: relative; 
+}
+.contar-prod{
+    position: absolute;
+    top: 50%;
+    right: 50px;
+
+    background-color: #000;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-carrito{
+    position: absolute;
+    top: 440px;
+    right: 30px;
+
+    width: 400px;
+    background-color: #fff;
+    z-index: 1;
+}
+.icon-x{
+    width: 25px;
+    height: 25px;
+}
+.icon-x:hover{
+    color: red;
+    cursor: pointer;
+}
+.carro-productos{
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.info-carro-producto{
+    display: flex;
+    justify-content: space-between  ;
+    flex: 0.8;
+}
+.nombre-producto-carrito{
+    font-size: 20px;
+}
+.cantidad-producto-carrito{
+    font-weight: 500;
+    font-size: 20px;
+}
+.precio-producto-carrito{
+    font-weight: 700;
+    font-size: 20px;
+}
+.carro-total{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 20px;
+    align-items: center;  
+}
+.carro-total h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+.total-pagar{
+    font-size: 20px;
 }
 
 /*Sección de contactos*/
