@@ -3,43 +3,48 @@
     src: url(recurs/vainilla\ .ttf);
 }
 header{
-    background-color: rgb(150, 164, 121);
-    box-shadow: 0px 5px 20px rgb(176, 174, 174)  ;
-    padding: 20px 20px;
+    padding: 20px 40px;
     height: 140px;
+
+    display: flex;
+    align-items: center;      
+    justify-content: flex-start; 
+    gap: 20px;
 }
 body{
  background-color: beige;
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ margin: 0px;
 }
 h2{
     color: rgb(47, 73, 43);
 }
 p{
     font-weight: 30px;
-    font-size: 15px;
+    font-size: 5px;
 }
 .title{
-    text-align: center;
     font-family: "Vainilla";
-    color: #f5e7ba;
-    font-size: 80px;
+    color: #df8f33;
+    font-size: 70px;
     letter-spacing: 2px;
-    margin-top: -2px;
-    margin-left: 130px;
+    margin: 0;
+    margin-top: 18px;
 }
+
 .subtitle{
-    text-align: center;
     font-family: "Vainilla";
     color: rgb(104, 90, 82);
-    font-size: 50px;
-    margin-top: -55px;
-    margin-left: 130px;
+    font-size: 40px;
+    margin-top: -10px;
+    text-align: center;
 }
+
 .logo{
-    float: right;
-    margin-top: -37px;
-    margin-right: 100px;
+    width: 90px;
+}
+.gatito{
+    margin-top: 100px;
 }
 
 .bienvenido{
@@ -51,8 +56,9 @@ p{
 }
 .bienvenido p{
     font-family: "Vainilla";
-    font-size:30px;
-    color: #4a4436;
+    font-size: 25px;
+    text-align: justify;
+    color: white;
 }
 .historia{
     margin-top: 10px;
@@ -62,8 +68,12 @@ p{
     gap: 15px;
 }
 .index{
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-top: -120px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color:rgb(87, 157, 118);
+    padding-left: 250px;
+    padding-right:250px;
 }
 .contenedor {
    display: grid;
@@ -74,7 +84,7 @@ p{
    padding: 20px;
 }
 .seccion {
-    background-color: rgb(159, 174, 130);
+    background-color: #869e83;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0px 5px 20px rgb(176, 174, 174);
@@ -116,7 +126,9 @@ p{
     font-family: "Vainilla";
     font-size: 18px;
 }
-
+.gatito{
+    margin-top: 10px;
+}
 .adopcion{
     background-color: #869e83;
     font-family: "Vainilla";
@@ -170,11 +182,13 @@ main{
     margin-right: 20px;
 }
 
-/*navegacion en horizontal*/
 nav{
-    background-color: rgb(150, 164, 121);
-    box-shadow: 0px 5px 20px rgb(176, 174, 174)  ;
+    background-color: #42a36adc;
+    box-shadow: 0px 3px 10px rgb(223, 222, 222)  ;
     padding: 2px;;
+    border-radius: 20px;
+    margin-top: -50px;
+    margin-left: 70px;
 }
 nav ul {
     list-style: none; 
@@ -189,9 +203,10 @@ nav a {
     color: #413737;
     font-weight: 500;
     padding: 10px 15px;
+    border-radius: 50px;
 }
 nav a:hover {
-    background-color: #f0f0f0;
+    background-color: #ffffff8b;
     color: #3f5e43;
 }
 footer p{
