@@ -11,13 +11,11 @@ header{
     justify-content: flex-start; 
     gap: 20px;
 }
+
 body{
  background-color: beige;
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  margin: 0px;
-}
-h2{
-    color: rgb(47, 73, 43);
 }
 p{
     font-weight: 30px;
@@ -29,7 +27,8 @@ p{
     font-size: 70px;
     letter-spacing: 2px;
     margin: 0;
-    margin-top: 18px;
+    margin-left: 5px;
+    margin-top: 50px;
 }
 
 .subtitle{
@@ -51,15 +50,34 @@ p{
     margin-top: 140px;
     margin-left: 20px;
     margin-right: 20px;
+
     display: flex;
-    gap: 15px;
-}
-.bienvenido p{
+    align-items: center;
+    gap: 40px;
+
+    padding: 50px 250px;
+    background-color: rgb(87, 157, 118);
+
     font-family: "Vainilla";
-    font-size: 25px;
+}
+.texto-bienvenida{
+    display: flex;
+    flex-direction: column;
+}
+
+.bienvenido h2{
+    font-size: 50px;
+    color: rgb(238, 228, 206);
+    margin: 0 0 15px 0;
+}
+
+.bienvenido p{
+    font-size: 30px;
     text-align: justify;
     color: white;
+    margin: 0;
 }
+
 .historia{
     margin-top: 10px;
     margin-left: 20px;
@@ -72,26 +90,14 @@ p{
     margin-left: 0px;
     margin-right: 0px;
     background-color:rgb(87, 157, 118);
-    padding-left: 250px;
-    padding-right:250px;
-}
-.contenedor {
-   display: grid;
-   grid-template-columns: 1fr;
-   gap: 40px;
-   max-width: none;
-   margin: 0 auto;
-   padding: 20px;
 }
 .seccion {
-    background-color: #869e83;
+    background-color: #f6efd0;
     padding: 30px;
-    border-radius: 8px;
     box-shadow: 0px 5px 20px rgb(176, 174, 174);
     width: auto;
     color: #5c504b;
     margin-bottom: 0px;
-
 }
 .seccion p{
     font-family:"Vainilla";
@@ -102,12 +108,12 @@ p{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 40px;
-    margin: 0;
+    gap: 0px;
+    background-color: #f6efd0;
 }
 .seccion2{
-    background-color: #869e83;
-    padding: 30px;
+    background-color:rgb(129, 166, 145);
+    padding: 5px;
     border-radius: 10px;
     box-shadow: 0px 5px 20px rgb(176, 174, 174);
     width: auto;
@@ -116,27 +122,34 @@ p{
     align-content: center;
     justify-content: center;
     text-align: center;
+    margin-left: 20px;
+    margin-top: 100px;
+    margin-right: 20px;
+}
+.seccion2 img{
+    border-radius: 10px;
 }
 .seccion2 h3{
-    color: #272a1d;
-    font-size: 25px;
+    color: #eed7c2;
+    font-size: 40px;
+    font-family: "Vainilla";
 }
 .seccion2 p{
     color: #413737;
     font-family: "Vainilla";
-    font-size: 18px;
+    font-size: 20px;
 }
 .gatito{
     margin-top: 10px;
 }
 .adopcion{
-    background-color: #869e83;
+    background-color: rgb(227, 184, 105);
     font-family: "Vainilla";
     font-size: 20px;
     padding: 15px;
     border-radius: 5px;
-    box-shadow: 0px 5px 20px rgb(176, 174, 174) ;
-   padding-top: 2px;
+    padding-top: 2px;
+    margin: 0px;    
 }
 .adopcion h3{
     color: #46511f;
@@ -183,8 +196,6 @@ main{
 }
 
 nav{
-    background-color: #42a36adc;
-    box-shadow: 0px 3px 10px rgb(223, 222, 222)  ;
     padding: 2px;;
     border-radius: 20px;
     margin-top: -50px;
