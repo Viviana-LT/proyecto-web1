@@ -24,30 +24,50 @@
   </nav>
 </header>
 
-  <main class="reseñas-centro">
-    <br><br>
-    <section class="reseñas-panel">
-    <h2>Reseñas de nuestros clientes</h2>
-    <section class="reseñas-lista">
-      <article class="reseña-item">
-        <h3>Ana María L.</h3>
-        <p>Un lugar increíble para relajarse con gatos adorables y café delicioso. ¡Volveré seguro!</p>
-      </article>
-      <article class="reseña-item">
-        <h3>Carlos M.</h3>
-        <p>El ambiente es muy tranquilo y los gatos son súper amigables. Lo recomiendo para una tarde diferente.</p>
-      </article>
-      <article class="reseña-item">
-        <h3>Luisa G.</h3>
-        <p>La atención es excelente y el menú tiene opciones para todos. Además, los gatos son un plus hermoso.</p>
-      </article>
+  <main>
+    <section class="reseñas-centro">
+      <div class="reseñas-panel">
+        <h2>Reseñas de nuestros clientes</h2>
+
+        <form id="reviewForm">
+          <div class="form-grupo">
+            <label for="authorName">Tu nombre</label>
+            <input type="text" id="authorName" placeholder="Tu nombre" required>
+          </div>
+
+          <div class="form-grupo">
+            <label for="rating">Calificación</label>
+            <select id="rating" required>
+              <option value="">-- Selecciona una calificación --</option>
+              <option value="5">5 - Excelente</option>
+              <option value="4">4 - Muy bueno</option>
+              <option value="3">3 - Bueno</option>
+              <option value="2">2 - Regular</option>
+              <option value="1">1 - Malo</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label for="reviewText">Tu reseña</label>
+            <textarea id="reviewText" placeholder="Cuéntanos tu experiencia..." required></textarea>
+          </div>
+
+          <div class="form-acciones">
+            <button type="submit" class="btn-sencillo">Enviar reseña</button>
+            <p id="responseMsg" class="msg-sencillo"></p>
+          </div>
+        </form>
+
+        <div class="reseñas-lista" id="reviewsList"></div>
+      </div>
     </section>
-  </section>
   </main>
 
   <footer>
         <p>&copy;2025 Winx- Neko no Mori</p>
     </footer>
+
+<script src="reseñas.js"></script>
 
 </body>
 </html>
