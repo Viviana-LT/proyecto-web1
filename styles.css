@@ -21,7 +21,7 @@ h2{
 }
 p{
     font-weight: 30px;
-    font-size: 5px;
+    font-size: 14px;
 }
 .title{
     font-family: "Vainilla";
@@ -522,6 +522,44 @@ a:hover{
     font-weight: 600; 
     color: #2f492b; 
 }
+.login-intro {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.login-opciones {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.login-pregunta {
+  color: #666;
+  font-size: 13px;
+  margin: 0 0 10px 0;
+}
+
+.login-visitante {
+  color: #999;
+  font-size: 12px;
+  margin: 15px 0 0 0;
+}
+
+.login-link {
+  color: #42a36adc;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
 .form-grupo { 
     display: grid; 
     gap: 6px; 
@@ -574,7 +612,7 @@ a:hover{
 .reseñas-lista { 
     display: grid; 
     gap: 12px; 
-    margin-top: 12px; 
+    margin-top: 20px; 
 }
 .reseña-item {
   background: #ffffff;
@@ -585,10 +623,23 @@ a:hover{
 .reseña-item h3 { 
     margin: 0 0 6px; 
     color: #3f4b3a; 
-    font-weight: 600; 
+    font-weight: 600;
+    font-size: 16px;
 }
 .reseña-item p { 
-    margin: 0; 
-    line-height: 1.5; 
-    color: #4a4436; 
+    margin: 0 0 6px; 
+    line-height: 1.6; 
+    color: #4a4436;
+    font-size: 16 px;
+}
+
+.reseña-item small {
+    color: #999;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
