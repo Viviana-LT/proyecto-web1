@@ -10,6 +10,7 @@ header{
     align-items: center;      
     justify-content: flex-start; 
     gap: 20px;
+    position: relative;
 }
 
 body{
@@ -31,6 +32,9 @@ p{
     margin-left: 5px;
     margin-top: 60px;
     margin-bottom: 20px;
+
+    
+    line-height: 1;
 }
 
 .subtitle{
@@ -97,6 +101,7 @@ p{
     margin-left: 0px;
     margin-right: 0px;
     background-color:rgb(87, 157, 118);
+    padding-top: 120px;
 }
 .seccion {
     background-color: #f6efd0;
@@ -203,9 +208,8 @@ p{
     margin-right: 2px;
 }
 main{
-    margin-top: -130px;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-top: 0;
+    padding-top: 130px;
 }
 
 nav{
@@ -215,6 +219,7 @@ nav{
     margin-left: 70px;
     font-size: 28px;
     font-family: "Vainilla";
+    position: relative;
 }
 nav ul {
     list-style: none; 
@@ -238,7 +243,9 @@ nav a:hover {
 footer p{
     text-align: center;
 }
-
+.mainProd{
+    margin-top: 20px;
+}
 /*Sección de productos*/
 .contenedor-productos{
     display: grid;
