@@ -44,7 +44,6 @@ p{
     margin-top: -10px;
     text-align: center;
 }
-
 .logo{
     width: 90px;
 }
@@ -97,11 +96,10 @@ p{
     gap: 15px;
 }
 .index{
-    margin-top: -120px;
+    margin-top: -250px;
     margin-left: 0px;
     margin-right: 0px;
     background-color:rgb(87, 157, 118);
-    padding-top: 120px;
 }
 .seccion {
     background-color: #f6efd0;
@@ -244,7 +242,17 @@ footer p{
     text-align: center;
 }
 .mainProd{
-    margin-top: 20px;
+    margin-top: -9px;
+    padding: 10px;
+    background-color: rgb(193, 182, 164);
+}
+.mainProd h2{
+    font-family: "Vainilla";
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: -20px;
+    margin-left: 67px;
+    color: #2f492b;
 }
 /*Sección de productos*/
 .contenedor-productos{
@@ -259,6 +267,7 @@ footer p{
     gap: 30px;
     padding: 10px;
     margin: 10px;
+    font-family: "Vainilla";
 }
 .producto:hover{
     background-color: rgb(252, 252, 230);
@@ -268,15 +277,13 @@ footer p{
     text-decoration: none;
     min-width: 100px; 
     height: 30px;
-    background-color: rgb(150, 164, 121); 
+    background-color: rgb(125, 162, 101); 
     padding: 10px;
     text-align: center;
     border-radius: 10px;
     align-content: center;
-    font-style: italic;
-    
     font-weight: 150;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Vainilla";
     font-size: 13px;
     display: flex;
     align-items: center;
@@ -284,6 +291,12 @@ footer p{
 }
 .producto p{
     text-align: justify;
+    font-size: 20px;
+    color:#50412e;
+}
+.producto h4{
+    font-size: 20px;
+    color:#50412e;
 }
 .header-prod{
     padding: 0px 0px 25px 0px;
@@ -294,6 +307,9 @@ footer p{
 header h3{
     display: flex;
     align-items: center;
+    color:rgb(49, 91, 52);
+    letter-spacing: 2px;
+    font-size: 20px;
 }
 .item{
     width: 200px;
