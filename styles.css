@@ -19,9 +19,45 @@ body{
     margin: 0;
     padding: 0;
 }
+
+main{
+    margin-top: 0;
+    padding-top: 130px;
+}
 p{
     font-weight: 30px;
     font-size: 14px;
+}
+nav{
+    padding: 2px;
+    border-radius: 20px;
+    margin-top: -10px;
+    font-size: 25px;
+    font-family: "Vainilla";
+    position: relative;
+    margin-right: 10px;
+}
+nav ul {
+    list-style: none; 
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #413737;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+nav a:hover {
+    background-color: #ffffff8b;
+    color: #3f5e43;
+}
+footer p{
+    text-align: center;
 }
 .title{
     font-family: "Vainilla";
@@ -129,13 +165,6 @@ p{
     margin: 0;
 }
 
-.historia{
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    display: flex;
-    gap: 15px;
-}
 .index{
     margin-top: -250px;
     margin-left: 0px;
@@ -165,11 +194,11 @@ p{
 }
 
 .seccion2 {
-    background-color: rgb(87, 157, 118);
-    padding: 25px;
+    background-color: #b0876a;
+    padding: 20px;
     border-radius: 20px;
     box-shadow: 0px 5px 20px rgb(176, 174, 174);
-    width: 320px;
+    width: 300px;
     height: 520px;
     color: #5c504b;
     display: flex;
@@ -185,7 +214,6 @@ p{
     object-fit: cover;
     border-radius: 15px;
 }
-
 .seccion2 h3 {
     color: #413021;
     font-size: 36px;
@@ -200,16 +228,16 @@ p{
     font-family: "Vainilla";
     margin: 15px 0 5px 0;
     margin-top: -60px;
-    margin-left: 30px;
+    margin-left: 20px;
+ 
 }
-
 .seccion2 p {
-    color: #e7d9c4;
+    color: #f9eee1;
     font-family: "Vainilla";
     font-size: 20px;
     margin: 5px 0;
     margin-top: -90px;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .seccion2 button {
@@ -255,14 +283,14 @@ p{
     margin-right: 300px;
 }
 #boton{
-    background-color: hsl(31, 59%, 60%);
+    background-color: hsl(33, 26%, 67%);
     padding: 5px;
     height: 50px;
     width: 80px;
     border-radius: 5px;
     border: #3f465e;
     font-family: "Vainilla";
-    color: #dfd9c9;
+    color: #4e4538;
     font-size: 20px;
     box-shadow: 0px 5px 20px rgb(176, 174, 174);
     transition: all 0.1s ease;
@@ -285,43 +313,9 @@ p{
     margin-left:5px;
     margin-right: 2px;
 }
-main{
-    margin-top: 0;
-    padding-top: 130px;
-}
 
 
-nav{
-    padding: 2px;
-    border-radius: 20px;
-    margin-top: -10px;
-    font-size: 25px;
-    font-family: "Vainilla";
-    position: relative;
-    margin-right: 10px;
-}
-nav ul {
-    list-style: none; 
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-}
-
-nav a {
-    text-decoration: none;
-    color: #413737;
-    font-weight: 500;
-    padding: 10px 15px;
-    border-radius: 50px;
-}
-nav a:hover {
-    background-color: #ffffff8b;
-    color: #3f5e43;
-}
-footer p{
-    text-align: center;
-}
+/*Sección de productos*/
 .mainProd{
     margin-top: -9px;
     padding: 10px;
@@ -335,7 +329,6 @@ footer p{
     margin-left: 67px;
     color: #2f492b;
 }
-/*Sección de productos*/
 .contenedor-productos{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -726,51 +719,180 @@ a:hover{
 }
 
 /* Reseñas */
+
+.mainRese{
+    margin-top: -240px;
+    font-family: "Vainilla";
+    letter-spacing: 1.5px;
+}
 .reseñas-centro { 
     margin: 120px 20px 48px; 
 }
+
 .reseñas-panel {
-  background: #f5e7ba;
-  border: 1px solid #dfe6cf;
-  border-radius: 10px;
-  padding: 16px;
+    background: linear-gradient(135deg, #e8d5b7 0%, #d4bb9a 100%);
+    border: none;
+    border-radius: 20px;
+    padding: 40px 32px;
+    box-shadow: 0 8px 24px rgba(47, 73, 43, 0.12);
 }
+
 .reseñas-panel h2 { 
-    margin: 0 0 10px; 
-    font-weight: 600; 
-    color: #2f492b; 
+    margin: 0 0 24px; 
+    font-weight: 700; 
+    color: #2f492b;
+    font-size: 28px;
+    letter-spacing: -0.5px;
 }
+
+/* Estilos del formulario */
+.reseñas-panel label {
+    display: block;
+    margin-bottom: 8px;
+    color: #3f4b3a;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.reseñas-panel input[type="text"],
+.reseñas-panel select,
+.reseñas-panel textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: #ffffff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.reseñas-panel input[type="text"]:focus,
+.reseñas-panel select:focus,
+.reseñas-panel textarea:focus {
+    outline: none;
+    border-color: #7d9b6f;
+    background: #fefffe;
+    box-shadow: 0 4px 12px rgba(125, 155, 111, 0.15);
+}
+
+.reseñas-panel button[type="submit"] {
+    background: linear-gradient(135deg, #5a7a4d 0%, #4a6a3f 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(90, 122, 77, 0.3);
+    margin-top: 12px;
+}
+
+.reseñas-panel button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(90, 122, 77, 0.4);
+    background: linear-gradient(135deg, #6a8a5d 0%, #5a7a4f 100%);
+}
+
+.reseñas-panel button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Lista de reseñas */
 .reseñas-lista { 
     display: grid; 
-    gap: 12px; 
-    margin-top: 20px; 
+    gap: 16px; 
+    margin-top: 32px; 
 }
+
 .reseña-item {
-  background: #ffffff;
-  border: 1px solid #e7ecd9;
-  border-radius: 10px;
-  padding: 12px;
+    background: #ffffff;
+    border: none;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
+
+.reseña-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #c67d3e 0%, #a86730 100%);
+}
+
+.reseña-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
 .reseña-item h3 { 
-    margin: 0 0 6px; 
-    color: #3f4b3a; 
-    font-weight: 600;
-    font-size: 16px;
+    margin: 0 0 12px; 
+    color: #2f492b; 
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.3px;
 }
+
 .reseña-item p { 
-    margin: 0 0 6px; 
-    line-height: 1.6; 
+    margin: 0 0 12px; 
+    line-height: 1.7; 
     color: #4a4436;
-    font-size: 16 px;
+    font-size: 15px;
 }
 
 .reseña-item small {
     color: #999;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-block;
+    padding: 4px 12px;
+    background: #f5f5f5;
+    border-radius: 20px;
 }
 
 textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: 120px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reseña-item {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .reseñas-panel {
+        padding: 24px 20px;
+    }
+    
+    .reseñas-panel h2 {
+        font-size: 24px;
+    }
+    
+    .reseña-item {
+        padding: 20px;
+    }
 }
