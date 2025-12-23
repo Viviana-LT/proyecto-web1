@@ -130,7 +130,7 @@ footer p{
 .adop{
     float: left;
     margin-right:30px;
-    margin-left: 350px;
+    margin-left: 230px;
 }
 
 .bienvenido{
@@ -313,7 +313,115 @@ footer p{
     margin-left:5px;
     margin-right: 2px;
 }
+/*formulario adopción*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+}
+.modal-content {
+    background: linear-gradient(135deg, #f6efd0 0%, #e8d5b7 100%);
+    margin: 5% auto;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 550px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+.close {
+    color: #3f2a1d;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
+.close:hover {
+    color: #df8f33;
+}
+.modal-content h2 {
+    color: #3f2a1d;
+    font-size: 30px;
+    text-align: center;
+    font-family: "Vainilla";
+    margin-bottom: 20px;
+}
+.info-gatito {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    border-left: 4px solid #df8f33;
+}
+.info-gatito p {
+    margin: 8px 0;
+    color: #5c504b;
+    font-size: 16px;
+    font-family: "Vainilla";
+}
+.info-gatito strong {
+    color: #3f2a1d;
+}
+.modal-content label {
+    display: block;
+    margin-top: 15px;
+    color: #3f2a1d;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: "Vainilla";
+}
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.modal-content input:focus,
+.modal-content textarea:focus {
+    outline: none;
+    border-color: #52987b;
+}
+.modal-content textarea {
+    min-height: 100px;
+    resize: vertical;
+    font-family: inherit;
+}
+.btn-enviar {
+    background: linear-gradient(135deg, #52987b 0%, #427a63 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    font-family: "Vainilla";
+}
+.btn-enviar:hover {
+    background: linear-gradient(135deg, #62a88b 0%, #528a73 100%);
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 30px 20px;
+    }
+}
 
 /*Sección de productos*/
 
@@ -615,6 +723,16 @@ a:hover{
 
 .close:hover {
     color: #000;
+}
+.promo-modal .close {
+    color: #aaa;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
 }
 
 .promo-btn {

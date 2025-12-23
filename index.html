@@ -71,7 +71,7 @@
                 <br><br>
                 <img class="adop" src="recurs/adop.png" width="220">
                 <br>
-                <h3><strong>Gatitos en adopción:</strong></h3>
+                <h3><strong>Disfruta un café y, si te enamoras, adopta un gatito</strong></h3>
                 <p>Adopta un gatito y descubre cómo un pequeño ronroneo puede llenar tu vida de amor.</p>
                 <br><br>
             </article>
@@ -80,58 +80,89 @@
 
         <section class="contenedorInt">
             <article class="seccion2">
-                <img src="recurs/moka.png" width=300>
+                <img src="recurs/moka.png" width="300" alt="Moka">
                 <h3>Moka</h3>
-                <h4>Edad:</h4><p><br>3 meses</p>
-                <h4>Características:</h4><p><br>Amorosa, tranquila y tierna</p>
-                <button id="boton">Adoptar</button> 
+                <h4>Edad:</h4><p>3 meses</p>
+                <h4>Características:</h4><p>Amorosa, tranquila y tierna</p>
+                <button class="btn-adoptar" onclick="abrirFormulario('Moka', '3 meses', 'Amorosa, tranquila y tierna')">Adoptar</button> 
             </article>
-            
+    
             <article class="seccion2">
-                <img src="recurs/haru.png" width=300>
+                <img src="recurs/haru.png" width="300" alt="Haru">
                 <h3>Haru bros.</h3>
-                <h4>Edad:</h4><p><br>3 meses</p>
-                <h4>Características:</h4><p><br>Amorosa, juguetona y dormilona</p>
-                <button id="boton">Adoptar</button>                
+                <h4>Edad:</h4><p>2 gatitas de 3 meses</p>
+                <h4>Características:</h4><p>Amorosas, juguetonas y dormilonas</p>
+                <button class="btn-adoptar" onclick="abrirFormulario('Haru bros.', '3 meses', 'Amorosa, juguetona y dormilona')">Adoptar</button>                
             </article>
 
             <article class="seccion2">
-                <img src="recurs/mochi.png" width=300>
+                <img src="recurs/mochi.png" width="300" alt="Mochi">
                 <h3>Mochi</h3>
-                <h4>Edad:</h4><p><br>3 meses</p>
-                <h4>Características:</h4><p><br>Curioso, tranquilo y muy cariñoso.</p>
-                <button id="boton">Adoptar</button>               
+                <h4>Edad:</h4><p>3 meses</p>
+                <h4>Características:</h4><p>Curioso, tranquilo y muy cariñoso</p>
+                <button class="btn-adoptar" onclick="abrirFormulario('Mochi', '3 meses', 'Curioso, tranquilo y muy cariñoso')">Adoptar</button>               
             </article>
 
             <article class="seccion2">
-                <img src="recurs/yuki.png" width=300>
+                <img src="recurs/yuki.png" width="300" alt="Yuki">
                 <h3>Yuki</h3>
-                <h4>Edad:</h4><p><br>2 meses</p>
-                <h4>Características:</h4><p><br>Dulce, ronronea sin parar y adora los mimos.</p>
-                <button id="boton">Adoptar</button>                
-
+                <h4>Edad:</h4><p>2 meses</p>
+                <h4>Características:</h4><p>Dulce, ronronea sin parar y adora los mimos</p>
+                <button class="btn-adoptar" onclick="abrirFormulario('Yuki', '2 meses', 'Dulce, ronronea sin parar y adora los mimos')">Adoptar</button>                
             </article>
+
             <article class="seccion2">
-                <img src="recurs/tofu.png" width=300>
+                <img src="recurs/tofu.png" width="300" alt="Tofu">
                 <h3>Tofu</h3>
-                <h4>Edad:</h4><p><br>2 meses</p>
-                <h4>Características:</h4><p><br>Divertido, sociable y aventurero</p>
-                <button id="boton">Adoptar</button> 
+                <h4>Edad:</h4><p>2 meses</p>
+                <h4>Características:</h4><p>Divertido, sociable y aventurero</p>
+                <button class="btn-adoptar" onclick="abrirFormulario('Tofu', '2 meses', 'Divertido, sociable y aventurero')">Adoptar</button> 
             </article>
 
             <article class="seccion2">
-                <img src="recurs/sora.png" width=300>
+                <img src="recurs/sora.png" width="300" alt="Sora">
                 <h3>Sora</h3> 
-                <h4>Edad:</h4><p><br>3 meses</p>
-                <h4>Características:</h4><p><br>Elegante, observadora y tierna.</p>
-                <button id="boton">Adoptar</button> 
+                <h4>Edad:</h4><p>3 meses</p>
+                <h4>Características:</h4><p>Elegante, observadora y tierna</p>
+                <button class="btn-adoptar" onclick="abrirFormulario('Sora', '3 meses', 'Elegante, observadora y tierna')">Adoptar</button> 
             </article>
-
         </section>
-        <br>
-    </main>
 
-    <div id="promoModal" class="modal">
+        <div id="modalAdopcion" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarFormulario()">&times;</span>
+            <h2> Formulario de Adopción</h2>
+            <div class="info-gatito">
+                    <p><strong>Gatito:</strong> <span id="nombreGatito"></span></p>
+                    <p><strong>Edad:</strong> <span id="edadGatito"></span></p>
+                    <p><strong>Características:</strong> <span id="caracGatito"></span></p>
+                </div>
+                <form id="formAdopcion">
+                    <input type="hidden" id="nombreGatoHidden" name="nombreGato">
+            
+                    <label for="nombreAdoptante">Tu Nombre Completo: *</label>
+                    <input type="text" id="nombreAdoptante" name="nombreAdoptante" required placeholder="Ej: María García">
+            
+                    <label for="email">Email: *</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            
+                    <label for="telefono">Teléfono: *</label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="987654321">
+            
+                    <label for="direccion">Dirección: *</label>
+                    <input type="text" id="direccion" name="direccion" required placeholder="Tu dirección completa">
+            
+                    <label for="motivacion">¿Por qué quieres adoptar a este gatito? *</label>
+                    <textarea id="motivacion" name="motivacion" required placeholder="Cuéntanos por qué quieres adoptar..."></textarea>
+            
+                    <button type="submit" class="btn-enviar">Enviar Solicitud</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <script src="adoptar.js"></script>
+    </main>
+    <div id="promoModal" class="modal promo-modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <img src="recurs/promocion.png" alt="Promoción Neko Mori">
