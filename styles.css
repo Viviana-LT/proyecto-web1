@@ -423,14 +423,17 @@ footer p{
     }
 }
 .mainContacto{
-    margin-top: -20px;
-    padding: 20px 350px;
-    background-color: rgb(193, 182, 164);
+    margin-top: -100px;
+    padding: 0px 50px;
 }
 .mainUsuario{
     margin-top: -20px;
     padding: 20px 350px;
     background-color: rgb(193, 182, 164);
+}
+.cyu{
+    background-color: rgb(193, 182, 164);
+    border-radius: 30px;
 }
 /*Sección de productos*/
 #nombreSeccion{
