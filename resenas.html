@@ -31,40 +31,31 @@
     </header>
   <main class="mainRese">
     <section class="reseñas-centro">
-      <div class="reseñas-panel">
-        <h2>Reseñas de nuestros clientes</h2>
+      <div class="container">
+        <h1>Deja tu reseña</h1>
+        
+        <form id="formResenas" class="form-resenas">
+            <input type="text" id="nombreUsuario" placeholder="Tu nombre" required>
+            <input type="text" id="titulo" placeholder="Título de la reseña" required>
 
-        <form id="reviewForm">
-          <div class="form-grupo">
-            <label for="authorName">Tu nombre</label>
-            <input type="text" id="authorName" placeholder="Tu nombre" required>
-          </div>
-
-          <div class="form-grupo">
-            <label for="rating">Calificación</label>
-            <select id="rating" required>
-              <option value="">-- Selecciona una calificación --</option>
-              <option value="5">5 - Excelente</option>
-              <option value="4">4 - Muy bueno</option>
-              <option value="3">3 - Bueno</option>
-              <option value="2">2 - Regular</option>
-              <option value="1">1 - Malo</option>
-            </select>
-          </div>
-
-          <div class="form-grupo">
-            <label for="reviewText">Tu reseña</label>
-            <textarea id="reviewText" placeholder="Cuéntanos tu experiencia..." required></textarea>
-          </div>
-
-          <div class="form-acciones">
-            <button type="submit" class="btn-sencillo">Enviar reseña</button>
-            <p id="responseMsg" class="msg-sencillo"></p>
-          </div>
+            <div class="rating-container">
+                <label>Calificación:</label>
+                <div class="rating" id="ratingStars">
+                    <span data-value="1">★</span>
+                    <span data-value="2">★</span>
+                    <span data-value="3">★</span>
+                    <span data-value="4">★</span>
+                    <span data-value="5">★</span>
+                </div>
+                <input type="hidden" id="calificacion" name="calificacion" required>
+            </div>
+            
+            <textarea id="contenido" placeholder="Cuéntanos tu experiencia..." rows="5" required></textarea>
+            <button type="submit">Enviar Reseña</button>
         </form>
 
-        <div class="reseñas-lista" id="reviewsList"></div>
-      </div>
+        <div id="mensaje"></div>
+    </div>
     </section>
   </main>
 
@@ -72,7 +63,7 @@
         <p>&copy;2025 Winx- Neko no Mori</p>
     </footer>
 
-<script src="reseñas.js"></script>
+<script src="resenas.js"></script>
 
 </body>
 </html>
