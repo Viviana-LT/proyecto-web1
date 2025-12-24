@@ -91,98 +91,112 @@ const showHTML = () => {
     countProducts.innerText = totalProducts;
 }
 
-// Obtener los elementos del DOM
+// ==========================================
+// FUNCIONES DEL MODAL
+// ==========================================
 const btnAbrir = document.getElementById('pagar');
 const btnListo = document.getElementById('btnListo');
 const modal = document.getElementById('miModal');
 
-// Función para mostrar la ventana
-btnAbrir.addEventListener('click', () => {
-    modal.style.display = 'flex';
-});
-
-// Función para ocultar la ventana (solo cuando se presiona 'Listo')
-btnListo.addEventListener('click', () => {
-    modal.style.display = 'none';
-
-});
-
-// -- MODIFICAR PRODUCTOS --
-const contenedor = document.getElementById('lista-productos-js');
-
-async function cargarProductos() {
-    try {
-        const respuesta = await fetch('/api/productos');
-        const productos = await respuesta.json();
-
-        contenedor.innerHTML = ''; 
-
-        productos.forEach(prod => {
-            // CONDICIÓN: Si la cantidad es 0 o menor, saltamos este producto
-            if (prod.stock <= 0) {
-                return; // No hace nada y pasa al siguiente producto de la lista
-            }
-
-            const article = document.createElement('article');
-            article.className = 'producto';
-            article.innerHTML = `
-                <figure>
-                    <img class="item" src="${prod.imagen_url}" width="120">
-                </figure>
-                <div class="info-producto">
-                    <header><h3>${prod.nombre}</h3></header>
-                    <div class="anadir-carrito">
-                        <p>PEN ${prod.precio}</p>
-                        <button class="add-carrito" onclick="agregarAlCarrito('${prod.nombre}', ${prod.precio})"> + </button>
-                    </div>
-                    <p><strong>Stock disponible:</strong> ${prod.stock} unidades</p>
-                    <h4>Descripción</h4>
-                    <p>${prod.descripcion}</p>
-                </div>
-            `;
-            contenedor.appendChild(article);
-        });
-    } catch (error) {
-        console.error("Error cargando productos:", error);
-    }
-}
-
-window.onload = cargarProductos;
-
-// Busca el botón de pagar en tu HTML y añade el evento
-
-btnListo.addEventListener('click', async () => {
-    // 'allProducts' debe ser la variable donde guardas lo que hay en tu carrito
-    // Si tu código de carrito usa otra variable, cámbiala aquí
+// Función para mostrar la ventana cuando se presiona "Pagar"
+btnAbrir.addEventListener('click', async () => {
+    // Verificar que hay productos en el carrito
     if (allProducts.length === 0) {
         alert("El carrito está vacío");
         return;
     }
 
     try {
+        // Procesar el pago en el servidor
         const respuesta = await fetch('/api/pagar', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(allProducts) // Enviamos la lista de productos
+            body: JSON.stringify(allProducts)
         });
 
-        if (respuesta.ok) {
-            alert("¡Compra realizada! El stock ha sido actualizado.");
-            
-            // 1. Abrir tu ventana emergente de "Pago" (la que ya tienes)
-            const modal = document.getElementById('miModal');
-            modal.style.display = 'flex';
+        const data = await respuesta.json();
 
-            // 2. Limpiar el carrito en el HTML
-            allProducts = []; 
-            showHTML(); // Función que actualiza la vista de tu carrito
-            
-            // 3. Recargar los productos para ocultar los que se quedaron sin stock
-            cargarProductos(); 
+        if (respuesta.ok) {
+            // Mostrar el modal de confirmación
+            modal.style.display = 'flex';
         } else {
-            alert("Hubo un error al procesar el pago.");
+            // Manejar error de stock insuficiente
+            if (data.productos_sin_stock) {
+                let mensaje = "⚠️ No hay suficiente stock para:\n\n";
+                
+                data.productos_sin_stock.forEach(prod => {
+                    mensaje += `📦 ${prod.nombre}\n`;
+                    mensaje += `   Solicitado: ${prod.solicitado}\n`;
+                    mensaje += `   Disponible: ${prod.disponible}\n\n`;
+                });
+                
+                mensaje += "Por favor, ajusta las cantidades en tu carrito.";
+                alert(mensaje);
+            } else {
+                alert("Hubo un error al procesar el pago: " + (data.error || "Error desconocido"));
+            }
         }
     } catch (error) {
         console.error("Error:", error);
+        alert("Error de conexión al procesar el pago");
     }
 });
+
+// Función para ocultar la ventana y limpiar el carrito
+btnListo.addEventListener('click', () => {
+    modal.style.display = 'none';
+    
+    // Limpiar el carrito
+    allProducts = []; 
+    showHTML();
+    
+    // Recargar los productos para actualizar el stock
+    cargarProductos();
+});
+
+// CARGAR PRODUCTOS DESDE LA BASE DE DATOS
+async function cargarProductos() {
+    try {
+        console.log("Cargando productos desde /api/productos...");
+        const respuesta = await fetch('/api/productos');
+        
+        // Si el servidor envía un error, esto nos avisará en la consola
+        if (!respuesta.ok) {
+            const errorTexto = await respuesta.text();
+            console.error("Error del servidor:", errorTexto);
+            return;
+        }
+
+        const productos = await respuesta.json();
+        console.log("Productos recibidos:", productos);
+        
+        const contenedor = document.querySelector('.contenedor-productos');
+        contenedor.innerHTML = ''; // Borra los productos viejos del HTML
+
+        productos.forEach(prod => {
+            if (prod.stock > 0) {
+                const article = document.createElement('article');
+                article.className = 'producto';
+                article.innerHTML = `
+                    <figure><img class="item" src="${prod.imagen_url}" width="120"></figure>
+                    <div class="info-producto">
+                        <header><h3>${prod.nombre}</h3></header>
+                        <div class="anadir-carrito">
+                            <p>PEN ${prod.precio}</p>
+                            <button class="add-carrito">+</button>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>${prod.descripcion || 'Sin descripción disponible'}</p>
+                    </div>`;
+                contenedor.appendChild(article);
+            }
+        });
+        
+        console.log("Productos cargados exitosamente");
+    } catch (error) {
+        console.error("Error cargando productos:", error);
+    }
+}
+
+// Cargar productos cuando la página termine de cargar
+window.addEventListener('load', cargarProductos);
