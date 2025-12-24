@@ -422,7 +422,16 @@ footer p{
         padding: 30px 20px;
     }
 }
-
+.mainContacto{
+    margin-top: -20px;
+    padding: 20px 350px;
+    background-color: rgb(193, 182, 164);
+}
+.mainUsuario{
+    margin-top: -20px;
+    padding: 20px 350px;
+    background-color: rgb(193, 182, 164);
+}
 /*Sección de productos*/
 .mainProd{
     margin-top: -9px;
