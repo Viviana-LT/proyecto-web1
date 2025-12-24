@@ -1,9 +1,9 @@
 # Proyecto Web
 # Nombre del proyecto: NEKO NO MORI
 
-### **Nombre del Equipo:** [Las WINX]
+### **Nombre del Equipo:** Las WINX
 
-**URL del Proyecto:** [https://tu-url-aqui.com](https://tu-url-aqui.com)
+**URL del Proyecto:** [https:/.com](https://tu-url-aqui.com)
 
 ---
 
@@ -27,8 +27,8 @@ A continuación se detalla la lista de colaboradores junto con la evaluación de
 
 | Nombre del Integrante | Rol / Responsabilidad | Calificación (0-20) |
 | :--- | :--- | :---: |
-| [Viviana Linares] | Líder de Proyecto/Desarrolladora | [20] |
-| [Jazmin Gonzales] | Desarrolladora | [20] |
-| [Alexandra Martel] | Desarrolladora | [20] |
+| Viviana Linares | Líder de Proyecto/Desarrolladora | [20] |
+| Jazmin Gonzales | Desarrolladora | [20] |
+| Alexandra Martel | Desarrolladora | [20] |
 
 ---
