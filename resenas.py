@@ -9,9 +9,10 @@ def conectar_db():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="",
-        database="adopciones"
+        password="61219257",
+        database="nekomori"
     )
+
 
 @app.route("/adoptar", methods=["POST"])
 def adoptar():
