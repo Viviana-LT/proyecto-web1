@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         contenido: document.getElementById("contenido").value
       };
 
-      fetch("http://localhost:8000/resena", {
+      fetch("http://127.0.0.1:5000/resenas", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

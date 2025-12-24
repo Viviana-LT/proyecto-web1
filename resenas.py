@@ -10,8 +10,9 @@ def conectar_db():
         host="localhost",
         user="root",
         password="",
-        database="adopciones"
+        database="nekomori"
     )
+
 
 @app.route("/adoptar", methods=["POST"])
 def adoptar():

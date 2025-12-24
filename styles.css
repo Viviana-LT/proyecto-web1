@@ -928,6 +928,110 @@ a:hover{
     font-size: 14px; 
     color: #4a4436; 
 }
+.login-main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f6efd0, #e8d5b7);
+}
+
+.login-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  max-width: 420px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-family: "Vainilla";
+}
+
+.login-title {
+  font-size: 32px;
+  color: #3f2a1d;
+  margin: 0;
+  text-align: center;
+}
+
+.login-subtitle {
+  font-size: 16px;
+  color: #7d5e4d;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+
+#loginForm label {
+  font-size: 14px;
+  color: #3f2a1d;
+  margin-bottom: 4px;
+  display: block;
+}
+
+#loginForm input[type="email"],
+#loginForm input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid #e0d4c4;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+#loginForm input:focus {
+  outline: none;
+  border-color: #52987b;
+  box-shadow: 0 0 0 2px rgba(82,152,123,0.2);
+}
+
+
+#loginForm button[type="submit"] {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #52987b, #427a63);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Vainilla";
+  box-shadow: 0 8px 18px rgba(82,152,123,0.5);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#loginForm button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(82,152,123,0.6);
+}
+
+#loginForm button[type="submit"]:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 10px rgba(82,152,123,0.4);
+}
+
+
+#loginMsg {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 4px;
+}
+#loginMsg.error { color: #c0392b; }
+#loginMsg.okay  { color: #27ae60; }
+
+@media (max-width: 600px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+  .login-title {
+    font-size: 26px;
+  }
+}
 
 /* Reseñas */
 
