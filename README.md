@@ -27,7 +27,7 @@ A continuación se detalla la lista de colaboradores junto con la evaluación de
 
 | Nombre del Integrante | Rol / Responsabilidad | Calificación (0-20) |
 | :--- | :--- | :---: |
-| [Viviana Linares] | Líder de Proyecto/Desarrolladora | - | [20] |
+| [Viviana Linares] | Líder de Proyecto/Desarrolladora | [20] |
 | [Jazmin Gonzales] | Desarrolladora | [20] |
 | [Alexandra Martel] | Desarrolladora | [20] |
 
