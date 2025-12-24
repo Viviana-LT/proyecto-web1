@@ -5,7 +5,7 @@
 header{
     padding: 20px 40px;
     height: 150px;
-
+    margin-left: 70px;
     display: flex;
     align-items: center;      
     justify-content: flex-start; 
@@ -35,7 +35,8 @@ nav{
     font-size: 25px;
     font-family: "Vainilla";
     position: relative;
-    margin-right: 10px;
+    margin-right: 30px;
+    margin-left: 70px;
 }
 nav ul {
     list-style: none; 
@@ -439,8 +440,7 @@ footer p{
 .mainProd{
     margin-top: -9px;
     padding: 10px;
-    background-color: #b0876a;
-    /*background-color: rgb(193, 182, 164);*/
+    background-color: #c5aa97;
 }
 .mainProd h2{
     font-family: "Vainilla";
