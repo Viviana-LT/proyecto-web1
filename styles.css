@@ -433,36 +433,43 @@ footer p{
     background-color: rgb(193, 182, 164);
 }
 /*Sección de productos*/
+
 .mainProd{
     margin-top: -9px;
     padding: 10px;
     background-color: rgb(193, 182, 164);
+    /*background-color: rgb(193, 182, 164);*/
 }
 .mainProd h2{
     font-family: "Vainilla";
     font-size: 40px;
     text-align: center;
     margin-bottom: -20px;
-    margin-left: 67px;
+    margin-left: 20px;
     color: #2f492b;
+}
+.nombreSeccion{
+    font-size: 25px;
+    margin-left: 25px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 .contenedor-productos{
     display: grid;
     grid-template-columns: 1fr 1fr;
-
 }
 .producto{
+    border-radius: 50px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     flex-shrink: 20px;
     gap: 30px;
-    padding: 10px;
-    margin: 10px;
+    padding: 30px;
+    margin: 20px;
     font-family: "Vainilla";
 }
 .producto:hover{
-    background-color: rgb(252, 252, 230);
-    border-radius: 10px;
+    background-color: rgb(179, 168, 150);
+    
 }
 .producto header{
     text-decoration: none;
@@ -520,6 +527,12 @@ header h3{
     font-weight: 700;
     font-size: 20px;
     color: #3f5e43;
+}
+
+.anadir-carrito button:hover{
+    background-color: #000;
+    color: white;
+    transform: scale(1.5);
 }
 .carrito{
     background-color:rgb(192, 192, 192);
@@ -629,12 +642,11 @@ header h3{
 
 /*Sección de contactos*/
 .cyu{
-    display: flex ;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 30px;
 }
-.cyu article{
-    min-width: 500px;
-}
+
 .cyu a{
     text-decoration: none;
     color: #494440;
@@ -656,13 +668,12 @@ a:hover{
     color: #0d4051;
 }
 ::selection{
-    background-color: rgb(172, 110, 84);
+    background-color: rgb(120, 103, 93);
     color: white;
 }
 .espacio{
-    margin-top: 150px;
+    margin-top: 0px;
 }
-
 
 /* ventana de promoción*/
 .modal {
