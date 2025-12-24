@@ -932,7 +932,7 @@ a:hover{
 /* Reseñas */
 
 .mainRese{
-    margin-top: -240px;
+    margin-top: -120px;
     font-family: "Vainilla";
     letter-spacing: 1.5px;
 }
@@ -1111,7 +1111,7 @@ textarea {
   max-width: 700px;
   margin: 2rem auto;
   padding: 2rem;
-  background: #fff;
+  background: linear-gradient(135deg, #e8d5b7 0%, #c2d6c0 100%);
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   display: flex;
@@ -1162,4 +1162,11 @@ textarea {
   align-self: flex-end;
   padding: 0.6rem 1.5rem;
   border-radius: 999px;
+}
+
+.reseñas-panel button[type="submit"],
+.btn-resena {
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ffb7ce 0%, #ff9ec4 100%);
+    box-shadow: 0 6px 15px rgba(255, 158, 196, 0.5);
 }
