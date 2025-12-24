@@ -15,6 +15,8 @@ let allProducts = []
 const valorTotal = document.querySelector(".total-pagar")
 const countProducts = document.querySelector("#contador-productos")
 
+const btnPagar = document.querySelector(".pagar")
+
 productList.addEventListener('click', e => {
     if(e.target.classList.contains("add-carrito")){
         const product = e.target.parentElement
@@ -90,3 +92,7 @@ const showHTML = () => {
     valorTotal.innerText = `PEN ${total}`;
     countProducts.innerText = totalProducts;
 }
+
+btnPagar.addEventListener('click', (e) => {
+    
+})

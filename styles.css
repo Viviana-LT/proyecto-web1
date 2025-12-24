@@ -424,11 +424,13 @@ footer p{
 }
 
 /*Sección de productos*/
-
+#nombreSeccion{
+    color: #000;
+}
 .mainProd{
     margin-top: -9px;
     padding: 10px;
-    background-color: rgb(193, 182, 164);
+    background-color: #b0876a;
     /*background-color: rgb(193, 182, 164);*/
 }
 .mainProd h2{
@@ -439,10 +441,13 @@ footer p{
     margin-left: 20px;
     color: #2f492b;
 }
+.info-producto h3{
+    color: #191919;
+}
 .nombreSeccion{
     font-size: 25px;
     margin-left: 25px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+    
 }
 .contenedor-productos{
     display: grid;
@@ -458,15 +463,11 @@ footer p{
     margin: 20px;
     font-family: "Vainilla";
 }
-.producto:hover{
-    background-color: rgb(179, 168, 150);
-    
-}
 .producto header{
     text-decoration: none;
     min-width: 100px; 
     height: 30px;
-    background-color: rgb(125, 162, 101); 
+    background-color:#52987b; 
     padding: 10px;
     text-align: center;
     border-radius: 10px;
@@ -577,6 +578,56 @@ header h3{
     align-items: center;
 
 }
+.pagar{
+    text-align: center;
+}
+#pagar button{
+    background-color: #6313a9;
+    color: white;
+    width: 400px;
+    height: 25px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: rgb(88, 87, 87);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 25   0px;
+    width: 90%;
+}
+
+.img-modal {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#btnListo {
+    padding: 5px 15px;
+    font-size: 14px;
+    background-color: #6313a9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 .contenedor-carrito{
     position: absolute;
     top: 50px;
@@ -638,6 +689,25 @@ header h3{
     padding: 30px;
 }
 
+.ubic {
+    padding: 20px;
+    text-align: center;
+}
+.ubic h2{
+    text-align: left;
+}
+#mapa-dinamico {
+    margin-top: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#mapa-dinamico iframe {
+    width: 100%;
+    display: block;
+}
 .cyu a{
     text-decoration: none;
     color: #494440;
