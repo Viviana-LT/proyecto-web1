@@ -3,7 +3,7 @@
 
 ### **Nombre del Equipo:** Las WINX
 
-**URL del Proyecto:** [https:/.com](https://tu-url-aqui.com)
+**URL del Proyecto:** [https:/.com](https://vivianaf.pythonanywhere.com/)
 
 ---
 
