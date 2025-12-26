@@ -1,8 +1,0 @@
-CREATE TABLE resenas (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  nombre_usuario VARCHAR(100) NOT NULL,
-  titulo VARCHAR(150) NOT NULL,
-  calificacion INT CHECK (calificacion BETWEEN 1 AND 5),
-  contenido TEXT NOT NULL,
-  fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);

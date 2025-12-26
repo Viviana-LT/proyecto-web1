@@ -6,7 +6,7 @@
     <title>NEKO NO MORI</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="recurs/logoEmp.png" type="image/png">
-    
+
 </head>
 <body>
 <header>
@@ -33,7 +33,7 @@
     <section class="reseñas-centro">
       <div class="container">
         <h1>Deja tu reseña</h1>
-        
+
         <form id="formResenas" class="form-resenas">
             <input type="text" id="nombreUsuario" placeholder="Tu nombre" required>
             <input type="text" id="titulo" placeholder="Título de la reseña" required>
@@ -49,10 +49,16 @@
                 </div>
                 <input type="hidden" id="calificacion" name="calificacion" required>
             </div>
-            
+
             <textarea id="contenido" placeholder="Cuéntanos tu experiencia..." rows="5" required></textarea>
             <button type="submit">Enviar Reseña</button>
         </form>
+
+        <div id="listaResenas" class="lista-resenas">
+            <h2>Reseñas de otros clientes</h2>
+            <div id="contenedorResenas">
+                </div>
+        </div>
 
         <div id="mensaje"></div>
     </div>
