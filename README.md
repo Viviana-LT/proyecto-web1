@@ -3,7 +3,7 @@
 
 ### **Nombre del Equipo:** Las WINX
 
-**URL del Proyecto:** [https:/.com](https://vivianaf.pythonanywhere.com/)
+**URL del Proyecto:** [NEKO NO MORI](https://vivianaf.pythonanywhere.com/)
 
 ---
 
