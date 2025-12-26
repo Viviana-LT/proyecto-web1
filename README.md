@@ -9,6 +9,7 @@
 
 ## Descripción
 "Este proyecto es una página web de cafetería con temática de gatos (adionalmente los brinda en adopción) está diseñada para gestionar la venta de sus productos y almacenar las solicitudes de adopción."
+Empleamos base de datos para la parte de los PRODUCTOS Y RESEÑAS
 
 ---
 
