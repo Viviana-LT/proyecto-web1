@@ -90,10 +90,6 @@ const showHTML = () => {
     valorTotal.innerText = `PEN ${total}`;
     countProducts.innerText = totalProducts;
 }
-
-// ==========================================
-// FUNCIONES DEL MODAL
-// ==========================================
 const btnAbrir = document.getElementById('pagar');
 const btnListo = document.getElementById('btnListo');
 const modal = document.getElementById('miModal');
@@ -122,7 +118,7 @@ btnAbrir.addEventListener('click', async () => {
         } else {
             // Manejar error de stock insuficiente
             if (data.productos_sin_stock) {
-                let mensaje = "⚠️ No hay suficiente stock para:\n\n";
+                let mensaje = " No hay suficiente stock para:\n\n";
                 
                 data.productos_sin_stock.forEach(prod => {
                     mensaje += `📦 ${prod.nombre}\n`;
@@ -157,46 +153,37 @@ btnListo.addEventListener('click', () => {
 // CARGAR PRODUCTOS DESDE LA BASE DE DATOS
 async function cargarProductos() {
     try {
-        console.log("Cargando productos desde /api/productos...");
         const respuesta = await fetch('/api/productos');
-        
-        // Si el servidor envía un error, esto nos avisará en la consola
-        if (!respuesta.ok) {
-            const errorTexto = await respuesta.text();
-            console.error("Error del servidor:", errorTexto);
-            return;
-        }
+        if (!respuesta.ok) return;
 
         const productos = await respuesta.json();
-        console.log("Productos recibidos:", productos);
-        
         const contenedor = document.querySelector('.contenedor-productos');
-        contenedor.innerHTML = ''; // Borra los productos viejos del HTML
+        contenedor.innerHTML = '';
 
         productos.forEach(prod => {
-            if (prod.stock > 0) {
-                const article = document.createElement('article');
-                article.className = 'producto';
-                article.innerHTML = `
-                    <figure><img class="item" src="${prod.imagen_url}" width="120"></figure>
-                    <div class="info-producto">
-                        <header><h3>${prod.nombre}</h3></header>
-                        <div class="anadir-carrito">
-                            <p>PEN ${prod.precio}</p>
-                            <button class="add-carrito">+</button>
-                        </div>
-                        <h4>Descripción</h4>
-                        <p>${prod.descripcion || 'Sin descripción disponible'}</p>
-                    </div>`;
-                contenedor.appendChild(article);
-            }
+            const article = document.createElement('article');
+            article.className = 'producto';
+            article.innerHTML = `
+                <figure>
+                    <img class="item" src="/recurs/${prod.imagen}" width="120">
+                </figure>
+                <div class="info-producto">
+                    <header><h3>${prod.nombre}</h3></header>
+                    <div class="anadir-carrito">
+                        <p>PEN ${prod.precio}</p>
+                        <button class="add-carrito">+</button>
+                    </div>
+                    <h4>Descripción</h4>
+                    <p>${prod.descripcion || 'Sin descripción disponible'}</p>
+                </div>
+            `;
+            contenedor.appendChild(article);
         });
-        
-        console.log("Productos cargados exitosamente");
     } catch (error) {
         console.error("Error cargando productos:", error);
     }
 }
+
 
 // Cargar productos cuando la página termine de cargar
 window.addEventListener('load', cargarProductos);
