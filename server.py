@@ -10,10 +10,10 @@ app = Flask(__name__)
 # ---------------- CONFIG ----------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-DB_HOST = "localhost"
-DB_USER = "root"
-DB_PASSWORD = ""
-DB_NAME = "neko_db"
+DB_HOST = os.environ.get("DB_HOST")
+DB_USER = os.environ.get("DB_USER")
+DB_PASSWORD = os.environ.get("DB_PASSWORD")
+DB_NAME = os.environ.get("DB_NAME")
 
 # Tipos MIME
 mimetypes.add_type('font/ttf', '.ttf')
@@ -27,7 +27,8 @@ def conectar_db():
         host=DB_HOST,
         user=DB_USER,
         password=DB_PASSWORD,
-        database=DB_NAME
+        database=DB_NAME,
+        port=int(os.environ.get("DB_PORT"))
     )
 
 # ---------------- API ----------------
@@ -122,7 +123,3 @@ def imagenes(filename):
 @app.route("/<path:archivo>")
 def archivos(archivo):
     return send_from_directory(BASE_DIR, archivo)
-
-# ---------------- RUN ----------------
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
