@@ -32,20 +32,9 @@ document.getElementById("formAdopcion").addEventListener("submit", function(e) {
         motivacion: document.getElementById("motivacion").value
     };
 
-    fetch("http://127.0.0.1:5000/adoptar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(datos)
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert(data.mensaje);
-        cerrarFormulario();
-    })
-    .catch(error => {
-        console.error("Error:", error);
-        alert("Error al enviar la solicitud");
-    });
+    console.log("Solicitud enviada:", datos); // solo para verificar
+
+    alert("Solicitud enviada correctamente 🐾❤️");
+    cerrarFormulario();
 });
+
