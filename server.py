@@ -28,7 +28,8 @@ def conectar_db():
         user=DB_USER,
         password=DB_PASSWORD,
         database=DB_NAME,
-        port=int(os.getenv("DB_PORT"))
+        port=int(os.getenv("DB_PORT")),
+        ssl_disabled=False
     )
 
 # ---------------- API ----------------
