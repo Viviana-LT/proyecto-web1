@@ -1,12 +1,14 @@
+import os
 import mysql.connector
 
 def registrar_adopcion(data):
     conn = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="neko_db"
+        host=os.environ.get("DB_HOST"),
+        user=os.environ.get("DB_USER"),
+        password=os.environ.get("DB_PASSWORD"),
+        database=os.environ.get("DB_NAME")
     )
+
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -24,3 +26,4 @@ def registrar_adopcion(data):
     conn.commit()
     cursor.close()
     conn.close()
+
