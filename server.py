@@ -106,12 +106,6 @@ def crear_resena():
     db.close()
     return jsonify({"mensaje": "Reseña guardada"})
 
-
-@app.route("/adoptar", methods=["POST"])
-def adoptar():
-    registrar_adopcion(request.json)
-    return jsonify({"mensaje": "Adopción registrada"})
-
 @app.route("/adopcion", methods=["POST"])
 def adopcion():
     data = request.json
