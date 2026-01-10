@@ -33,7 +33,7 @@ document.getElementById("formAdopcion").addEventListener("submit", async functio
     };
 
     try {
-        const res = await fetch("/adoptar", {
+        const res = await fetch("/adopcion", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
