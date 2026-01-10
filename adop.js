@@ -20,7 +20,7 @@ window.onclick = function(event) {
     }
 };
 
-document.getElementById("formAdopcion").addEventListener("submit", function(e) {
+document.getElementById("formAdopcion").addEventListener("submit", async function(e) {
     e.preventDefault();
 
     const datos = {
@@ -32,9 +32,23 @@ document.getElementById("formAdopcion").addEventListener("submit", function(e) {
         motivacion: document.getElementById("motivacion").value
     };
 
-    console.log("Solicitud enviada:", datos); // solo para verificar
+    try {
+        const res = await fetch("/adopcion", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(datos)
+        });
 
-    alert("Solicitud enviada correctamente 🐾❤️");
-    cerrarFormulario();
+        const resultado = await res.json();
+        console.log("Respuesta servidor:", resultado);
+
+        alert("Solicitud enviada y guardada correctamente 🐾❤️");
+        cerrarFormulario();
+
+    } catch (err) {
+        console.error("Error:", err);
+        alert("Error al enviar la solicitud 😿");
+    }
 });
-
