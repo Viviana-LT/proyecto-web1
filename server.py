@@ -115,12 +115,10 @@ def adoptar():
 @app.route("/adopcion", methods=["POST"])
 def adopcion():
     data = request.json
-    print(" SI ENTRA A ADOPCION")
-    print(" DATA:", data)
-
-    registrar_adopcion(data)
-
+    print(" LLEGÓ ADOPCIÓN")
+    print(data)
     return jsonify({"ok": True})
+
 
 # ---------------- ARCHIVOS ----------------
 @app.route("/")
