@@ -108,13 +108,18 @@ def crear_resena():
 
 @app.route("/adopcion", methods=["POST"])
 def adopcion():
-    print("🐾 LLEGÓ ADOPCIÓN")
-    data = request.json
-    print(data)
+    try:
+        print("🐾 LLEGÓ ADOPCIÓN")
+        data = request.json
+        print(data)
 
-    registrar_adopcion(data)
+        registrar_adopcion(data)
 
-    return jsonify({"ok": True})
+        return jsonify({"ok": True})
+    except Exception as e:
+        print(" ERROR ADOPCIÓN:", e)
+        return jsonify({"ok": False, "error": str(e)}), 500
+
 
 # ---------------- ARCHIVOS ----------------
 @app.route("/")
