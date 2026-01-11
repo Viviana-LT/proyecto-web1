@@ -91,13 +91,22 @@ const showHTML = () => {
 
 // =================== BOTÓN PAGAR ===================
 const btnAbrir = document.getElementById('pagar');
-const modal = document.getElementById('miModal');
 
 btnAbrir.addEventListener('click', () => {
     if (allProducts.length === 0) {
         alert("El carrito está vacío");
         return;
     }
+
+    const modal = document.getElementById('miModal');
+
+    if (!modal) {
+        console.error("No existe el modal con id='miModal'");
+        alert("Error: no se encuentra el modal. Revisa el HTML.");
+        return;
+    }
+
+    console.log(" Abriendo modal");
     modal.style.display = 'flex';
 });
 
