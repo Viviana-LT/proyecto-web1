@@ -106,30 +106,6 @@ def crear_resena():
     db.close()
     return jsonify({"mensaje": "Reseña guardada"})
 
-def registrar_adopcion(data):
-    conn = get_connection()
-    cursor = conn.cursor()
-
-    sql = """
-    INSERT INTO adopciones
-    (nombre_adoptante, email, telefono, direccion, motivacion)
-    VALUES (%s, %s, %s, %s, %s)
-    """
-
-    valores = (
-        data["nombreAdoptante"],
-        data["email"],
-        data["telefono"],
-        data["direccion"],
-        data["motivacion"]
-    )
-
-    cursor.execute(sql, valores)
-    conn.commit()
-
-    cursor.close()
-    conn.close()
-
 @app.route("/adopcion", methods=["POST"])
 def adopcion():
     print("🐾 LLEGÓ ADOPCIÓN")
