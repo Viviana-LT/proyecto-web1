@@ -88,9 +88,10 @@ const showHTML = () => {
     valorTotal.innerText = `PEN ${total}`;
     countProducts.innerText = totalProducts;
 }
-
 // =================== BOTÓN PAGAR ===================
 const btnAbrir = document.getElementById('pagar');
+const btnListo = document.getElementById('btnListo');
+const modal = document.getElementById('miModal');
 
 btnAbrir.addEventListener('click', () => {
     if (allProducts.length === 0) {
@@ -98,17 +99,65 @@ btnAbrir.addEventListener('click', () => {
         return;
     }
 
-    const modal = document.getElementById('miModal');
+    modal.style.display = 'flex';
+});
 
-    if (!modal) {
-        console.error("No existe el modal con id='miModal'");
-        alert("Error: no se encuentra el modal. Revisa el HTML.");
+// =================== BOTÓN LISTO (CONFIRMAR PAGO) ===================
+btnListo.addEventListener('click', async () => {
+
+    const email = document.getElementById("clienteEmail").value;
+    const telefono = document.getElementById("clienteTelefono").value;
+    const direccion = document.getElementById("clienteDireccion").value;
+    const tipoEntrega = document.getElementById("tipoEntrega").value;
+
+    if (!email || !telefono || !direccion) {
+        alert("Completa los datos del cliente");
         return;
     }
 
-    console.log(" Abriendo modal");
-    modal.style.display = 'flex';
+    if (allProducts.length === 0) {
+        alert("El carrito está vacío");
+        return;
+    }
+
+    const datosPedido = {
+        cliente: {
+            email,
+            telefono,
+            direccion,
+            tipoEntrega
+        },
+        productos: allProducts
+    };
+
+    try {
+        const res = await fetch("/api/pagar", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(datosPedido)
+        });
+
+        const resultado = await res.json();
+        console.log("Respuesta servidor:", resultado);
+
+        if (resultado.success) {
+            alert("Pedido realizado correctamente 🐾☕");
+
+            // Vaciar carrito
+            allProducts = [];
+            showHTML();
+
+            modal.style.display = 'none';
+        } else {
+            alert("Error al procesar el pedido");
+        }
+
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Error de conexión con el servidor");
+    }
 });
+
 
 // =================== CARGAR PRODUCTOS ===================
 async function cargarProductos() {

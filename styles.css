@@ -522,6 +522,13 @@ header h3{
     transform: scale(1.2);
     transition: all .3s;
 }
+#btnListo {
+    position: relative;
+    z-index: 9999;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
 
 .anadir-carrito{
     display: inline-flex;
