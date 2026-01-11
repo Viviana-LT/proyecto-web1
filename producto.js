@@ -141,14 +141,14 @@ btnListo.addEventListener('click', async () => {
         console.log("Respuesta servidor:", resultado);
 
         if (resultado.success) {
-            alert("Pedido realizado correctamente 🐾☕");
-
-            // Vaciar carrito
-            allProducts = [];
-            showHTML();
+            alert(
+                "🐾 Pedido realizado correctamente\n\n" +
+                "💰 Total: PEN " + resultado.total + "\n" +
+                "⏱️ Tiempo estimado: " + resultado.tiempo + " minutos"
+            );
 
             modal.style.display = 'none';
-        } else {
+        }  else {
             alert("Error al procesar el pedido");
         }
 

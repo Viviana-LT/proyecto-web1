@@ -51,32 +51,50 @@ def pagar():
         cliente = datos["cliente"]
         productos = datos["productos"]
 
+        total = 0
+
+        # calcular total
+        for p in productos:
+            precio = float(p["price"].replace("PEN", "").strip())
+            total += precio * p["cantidad"]
+
+        # tiempo estimado simple:
+        tiempo_estimado = 10 + (len(productos) * 5)  # 10 min base + 5 por producto
+
         db = conectar_db()
         cursor = db.cursor()
 
-        # 1. Guardar pedido
+        # Guardar pedido completo
         cursor.execute("""
-            INSERT INTO pedidos (email, telefono, direccion, tipo_entrega)
-            VALUES (%s, %s, %s, %s)
+            INSERT INTO pedidos (email, telefono, direccion, tipo_entrega, total, productos, tiempo_estimado)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
         """, (
             cliente["email"],
             cliente["telefono"],
             cliente["direccion"],
-            cliente["tipoEntrega"]
+            cliente["tipoEntrega"],
+            total,
+            json.dumps(productos),
+            tiempo_estimado
         ))
 
-        # 2. Descontar stock
+        # Descontar stock
         for item in productos:
-            cursor.execute(
-                "UPDATE productos SET stock = stock - %s WHERE nombre = %s AND stock >= %s",
-                (item["cantidad"], item["title"], item["cantidad"])
-            )
+            cursor.execute("""
+                UPDATE productos 
+                SET stock = stock - %s 
+                WHERE nombre = %s AND stock >= %s
+            """, (item["cantidad"], item["title"], item["cantidad"]))
 
         db.commit()
         cursor.close()
         db.close()
 
-        return jsonify({"success": True})
+        return jsonify({
+            "success": True,
+            "total": total,
+            "tiempo": tiempo_estimado
+        })
 
     except Exception as e:
         print("ERROR PAGO:", e)
