@@ -45,20 +45,42 @@ def api_productos():
 
 @app.route("/api/pagar", methods=["POST"])
 def pagar():
-    productos = request.json
-    db = conectar_db()
-    cursor = db.cursor()
+    try:
+        datos = request.json
 
-    for item in productos:
-        cursor.execute(
-            "UPDATE productos SET stock = stock - %s WHERE nombre = %s AND stock >= %s",
-            (item["cantidad"], item["title"], item["cantidad"])
-        )
+        cliente = datos["cliente"]
+        productos = datos["productos"]
 
-    db.commit()
-    cursor.close()
-    db.close()
-    return jsonify({"success": True})
+        db = conectar_db()
+        cursor = db.cursor()
+
+        # 1. Guardar pedido
+        cursor.execute("""
+            INSERT INTO pedidos (email, telefono, direccion, tipo_entrega)
+            VALUES (%s, %s, %s, %s)
+        """, (
+            cliente["email"],
+            cliente["telefono"],
+            cliente["direccion"],
+            cliente["tipoEntrega"]
+        ))
+
+        # 2. Descontar stock
+        for item in productos:
+            cursor.execute(
+                "UPDATE productos SET stock = stock - %s WHERE nombre = %s AND stock >= %s",
+                (item["cantidad"], item["title"], item["cantidad"])
+            )
+
+        db.commit()
+        cursor.close()
+        db.close()
+
+        return jsonify({"success": True})
+
+    except Exception as e:
+        print("ERROR PAGO:", e)
+        return jsonify({"success": False, "error": str(e)}), 500
 
 @app.route("/api/ver_resenas", methods=["GET"])
 def ver_resenas():

@@ -44,7 +44,7 @@ document.getElementById("formAdopcion").addEventListener("submit", async functio
         const resultado = await res.json();
         console.log("Respuesta servidor:", resultado);
 
-        alert("Solicitud enviada y guardada correctamente 🐾❤️");
+        alert("Solicitud enviada correctamente, nos contactaremos con usted 🐾❤️");
         cerrarFormulario();
 
     } catch (err) {

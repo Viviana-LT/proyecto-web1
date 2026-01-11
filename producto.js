@@ -15,6 +15,7 @@ let allProducts = []
 const valorTotal = document.querySelector(".total-pagar")
 const countProducts = document.querySelector("#contador-productos")
 
+// =================== AGREGAR AL CARRITO ===================
 productList.addEventListener('click', e => {
     if(e.target.classList.contains("add-carrito")){
         const product = e.target.parentElement
@@ -24,6 +25,7 @@ productList.addEventListener('click', e => {
             title: product.previousElementSibling.querySelector("h3").textContent,
             price: e.target.previousElementSibling.textContent
         }
+
         const existe = allProducts.some(product => product.title === infoProduct.title)
 
         if(existe){
@@ -39,20 +41,16 @@ productList.addEventListener('click', e => {
         } else {
             allProducts = [...allProducts, infoProduct]
         }
-        
 
         showHTML();
-    };
-
+    }
 })
 
+// =================== ELIMINAR DEL CARRITO ===================
 rowProduct.addEventListener('click', (e) => {
     if (e.target.classList.contains("icon-x")){
-        console.log(e.target.parentElement)
         const product = e.target.parentElement;
         const title = product.querySelector('p').textContent;
-
-        console.log(product.querySelector('p').textContent)
 
         allProducts = allProducts.filter(
             prod => prod.title !== title
@@ -61,6 +59,7 @@ rowProduct.addEventListener('click', (e) => {
     }
 })
 
+// =================== MOSTRAR CARRITO ===================
 const showHTML = () => {
     rowProduct.innerHTML = "";
 
@@ -83,74 +82,26 @@ const showHTML = () => {
         rowProduct.append(contenedorProduct);
 
         total += parseFloat(product.cantidad * product.price.slice(3));
-
         totalProducts += product.cantidad;
     });
 
     valorTotal.innerText = `PEN ${total}`;
     countProducts.innerText = totalProducts;
 }
+
+// =================== BOTÓN PAGAR ===================
 const btnAbrir = document.getElementById('pagar');
-const btnListo = document.getElementById('btnListo');
 const modal = document.getElementById('miModal');
 
-// Función para mostrar la ventana cuando se presiona "Pagar"
-btnAbrir.addEventListener('click', async () => {
-    // Verificar que hay productos en el carrito
+btnAbrir.addEventListener('click', () => {
     if (allProducts.length === 0) {
         alert("El carrito está vacío");
         return;
     }
-
-    try {
-        // Procesar el pago en el servidor
-        const respuesta = await fetch('/api/pagar', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(allProducts)
-        });
-
-        const data = await respuesta.json();
-
-        if (respuesta.ok) {
-            // Mostrar el modal de confirmación
-            modal.style.display = 'flex';
-        } else {
-            // Manejar error de stock insuficiente
-            if (data.productos_sin_stock) {
-                let mensaje = " No hay suficiente stock para:\n\n";
-                
-                data.productos_sin_stock.forEach(prod => {
-                    mensaje += `📦 ${prod.nombre}\n`;
-                    mensaje += `   Solicitado: ${prod.solicitado}\n`;
-                    mensaje += `   Disponible: ${prod.disponible}\n\n`;
-                });
-                
-                mensaje += "Por favor, ajusta las cantidades en tu carrito.";
-                alert(mensaje);
-            } else {
-                alert("Hubo un error al procesar el pago: " + (data.error || "Error desconocido"));
-            }
-        }
-    } catch (error) {
-        console.error("Error:", error);
-        alert("Error de conexión al procesar el pago");
-    }
+    modal.style.display = 'flex';
 });
 
-// Función para ocultar la ventana y limpiar el carrito
-btnListo.addEventListener('click', () => {
-    modal.style.display = 'none';
-    
-    // Limpiar el carrito
-    allProducts = []; 
-    showHTML();
-    
-    // Recargar los productos para actualizar el stock
-    cargarProductos();
-});
-
-// CARGAR PRODUCTOS DESDE LA BASE DE DATOS
+// =================== CARGAR PRODUCTOS ===================
 async function cargarProductos() {
     try {
         const respuesta = await fetch('/api/productos');
@@ -184,6 +135,5 @@ async function cargarProductos() {
     }
 }
 
-
-// Cargar productos cuando la página termine de cargar
+// =================== INICIAR ===================
 window.addEventListener('load', cargarProductos);
