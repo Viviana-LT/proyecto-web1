@@ -106,19 +106,39 @@ def crear_resena():
     db.close()
     return jsonify({"mensaje": "Reseña guardada"})
 
+def registrar_adopcion(data):
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    sql = """
+    INSERT INTO adopciones
+    (nombre_adoptante, email, telefono, direccion, motivacion)
+    VALUES (%s, %s, %s, %s, %s)
+    """
+
+    valores = (
+        data["nombreAdoptante"],
+        data["email"],
+        data["telefono"],
+        data["direccion"],
+        data["motivacion"]
+    )
+
+    cursor.execute(sql, valores)
+    conn.commit()
+
+    cursor.close()
+    conn.close()
+
 @app.route("/adopcion", methods=["POST"])
 def adopcion():
-    try:
-        data = request.json
-        print(" LLEGÓ ADOPCIÓN")
-        print(data)
+    print("🐾 LLEGÓ ADOPCIÓN")
+    data = request.json
+    print(data)
 
-        registrar_adopcion(data) 
+    registrar_adopcion(data)
 
-        return jsonify({"ok": True, "mensaje": "Adopción guardada correctamente"})
-    except Exception as e:
-        print("ERROR AL GUARDAR ADOPCIÓN:", e)
-        return jsonify({"ok": False, "error": str(e)}), 500
+    return jsonify({"ok": True})
 
 # ---------------- ARCHIVOS ----------------
 @app.route("/")
