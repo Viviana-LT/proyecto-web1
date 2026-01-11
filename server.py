@@ -109,7 +109,16 @@ def crear_resena():
 @app.route("/adopcion", methods=["POST"])
 def adopcion():
     try:
-        print("🐾 LLEGÓ ADOPCIÓN")
+        db = conectar_db()
+        cursor = db.cursor()
+
+        cursor.execute("SELECT DATABASE()")
+        print(" BASE DE DATOS REAL:", cursor.fetchone())
+
+        cursor.execute("SHOW TABLES")
+        print(" TABLAS:", cursor.fetchall())
+
+        print(" LLEGÓ ADOPCIÓN")
         data = request.json
         print(data)
 
