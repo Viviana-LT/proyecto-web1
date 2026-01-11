@@ -29,7 +29,8 @@ def conectar_db():
         password=DB_PASSWORD,
         database=DB_NAME,
         port=int(os.getenv("DB_PORT")),
-        ssl_disabled=False
+        ssl_disabled=False,
+        time_zone='-05:00'
     )
 
 # ---------------- API ----------------
