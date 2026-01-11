@@ -16,7 +16,7 @@ def registrar_adopcion(data):
     cursor = conn.cursor()
 
     sql = """
-    INSERT INTO adopciones
+    INSERT INTO adopcion
     (nombre_adoptante, email, telefono, direccion, motivacion)
     VALUES (%s, %s, %s, %s, %s)
     """
